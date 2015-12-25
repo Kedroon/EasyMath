@@ -16,6 +16,8 @@ public class TriangleOperationsActivity extends AppCompatActivity {
     Integer[] imageId = {
             R.drawable.skull,
             R.drawable.skull,
+            R.drawable.skull,
+            R.drawable.skull,
 
     };
 
@@ -24,8 +26,10 @@ public class TriangleOperationsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.triangle_operations);
         final String[] triangleOperations = {
-                "angulo",
-                "lados",
+                getString(R.string.base_height),
+                getString(R.string.herons_formula),
+                getString(R.string.angle),
+                getString(R.string.squi),
 
         };
         ListOfOperations adapter = new ListOfOperations(this,triangleOperations,imageId);

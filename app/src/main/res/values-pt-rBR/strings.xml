@@ -5,6 +5,9 @@
     <string name="title_activity_geometric_forms">Formas Geométricas</string>
     <string name="square">Quadrado</string>
     <string name="triangle">Triângulo</string>
-    <string name="herons_formula">Fórmula de Heron - Calcular área do triângulo com a medidas dos lados</string>
-    <string name="base_alture"></string>
+    <string name="title_activity_triangle_operations">Triângulo</string>
+    <string name="herons_formula">Fórmula de Heron - Calcular área com as medidas dos 3 lados</string>
+    <string name="base_height">Calcular área com a base e altura</string>
+    <string name="angle">Calcular área com 2 lados e o ângulo entre eles</string>
+    <string name="squi">Calcular altura e área de um triângulo equilátero</string>
 </resources>
