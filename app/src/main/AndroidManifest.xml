@@ -15,6 +15,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".GeometricForms"
+            android:label="@string/title_activity_geometric_forms"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sample.kedroon.easymath.MainActivity" />
+        </activity>
+        <activity
+            android:name=".TriangleOperationsActivity"
+            android:label="@string/title_activity_triangle_operations"
+            android:parentActivityName=".GeometricForms" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sample.kedroon.easymath.GeometricForms" />
+        </activity>
     </application>
 
 </manifest>

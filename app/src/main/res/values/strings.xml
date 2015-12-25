@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Easy Math</string>
+    <string name="geo_forms">Geometric Forms</string>
+    <string name="title_activity_geometric_forms">Geometric Forms</string>
+    <string name="square">Square</string>
+    <string name="triangle">Triangle</string>
+    <string name="title_activity_triangle_operations">Triangle</string>
 </resources>

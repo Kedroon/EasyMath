@@ -1,6 +1,7 @@
 package com.sample.kedroon.easymath;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,15 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     ListView list;
 
-    String[] web = {
-            "Google Plus",
-            "Twitter",
-            "Windows",
-            "Bing",
-            "Itunes",
-            "Wordpress",
-            "Drupal"
-    };
+
     Integer[] imageId = {
             R.drawable.skull,
             R.drawable.skull,
@@ -35,15 +28,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListOfOperations adapter = new ListOfOperations(this,web,imageId);
+        final String[] mainOperations = {
+                getString(R.string.geo_forms),
+                "Twitter",
+                "Windows",
+                "Bing",
+                "Itunes",
+                "Wordpress",
+                "Drupal"
+        };
+        ListOfOperations adapter = new ListOfOperations(this,mainOperations,imageId);
         list =(ListView)findViewById(R.id.operations_list);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, "You Clicked at " + web[+position], Toast.LENGTH_SHORT).show();
+                if(position==0){
+                    Intent intent = new Intent(getApplicationContext(),GeometricForms.class);
+                    startActivity(intent);
+
+                }
+                else{
+                    Toast.makeText(MainActivity.this, "You Clicked at " + mainOperations[+position], Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
     }
+
 }
