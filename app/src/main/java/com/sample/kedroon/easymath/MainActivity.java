@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final String[] mainOperations = {
                 getString(R.string.geo_forms),
-                "Twitter",
-                "Windows",
-                "Bing",
-                "Itunes",
-                "Wordpress",
-                "Drupal"
+                getString(R.string.place_holder),
+                getString(R.string.place_holder),
+                getString(R.string.place_holder),
+                getString(R.string.place_holder),
+                getString(R.string.place_holder),
+                getString(R.string.place_holder),
         };
         ListOfOperations adapter = new ListOfOperations(this,mainOperations,imageId);
         list =(ListView)findViewById(R.id.operations_list);

@@ -5,8 +5,15 @@
     <string name="square">Square</string>
     <string name="triangle">Triangle</string>
     <string name="title_activity_triangle_operations">Triangle</string>
-    <string name="herons_formula">Herons Formula - Calculate the area with the measures of the 3 sides</string>
+    <string name="herons_formula">Calculate the area with the measures of the 3 sides</string>
     <string name="base_height">Calculate the area with the base and height</string>
     <string name="angle">Calculate the area with 2 sides and the angle between them</string>
     <string name="squi">Calculate the height and area of a equilateral triangle</string>
+    <string name="place_holder">Place Holder</string>
+    <string name="title_activity_base_and_height">Base and Height</string>
+    <string name="base">Base</string>
+    <string name="height">Height</string>
+    <string name="formula">Formula</string>
+    <string name="calculate">Calculate</string>
+    <string name="result">Result= "</string>
 </resources>

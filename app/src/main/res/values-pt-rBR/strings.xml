@@ -1,4 +1,3 @@
-
 <resources>
     <string name="app_name">Easy Math</string>
     <string name="geo_forms">Formas Geométricas</string>
@@ -6,8 +5,15 @@
     <string name="square">Quadrado</string>
     <string name="triangle">Triângulo</string>
     <string name="title_activity_triangle_operations">Triângulo</string>
-    <string name="herons_formula">Fórmula de Heron - Calcular área com as medidas dos 3 lados</string>
+    <string name="herons_formula">Calcular área com as medidas dos 3 lados</string>
     <string name="base_height">Calcular área com a base e altura</string>
     <string name="angle">Calcular área com 2 lados e o ângulo entre eles</string>
     <string name="squi">Calcular altura e área de um triângulo equilátero</string>
+    <string name="place_holder">Temporario</string>
+    <string name="title_activity_base_and_height">Base e Altura</string>
+    <string name="base">Base</string>
+    <string name="height">Altura</string>
+    <string name="formula">Fórmula</string>
+    <string name="calculate">Calcular</string>
+    <string name="result">Resultado= "</string>
 </resources>

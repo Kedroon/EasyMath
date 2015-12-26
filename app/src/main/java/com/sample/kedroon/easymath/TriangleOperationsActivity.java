@@ -1,5 +1,6 @@
 package com.sample.kedroon.easymath;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
@@ -32,13 +33,18 @@ public class TriangleOperationsActivity extends AppCompatActivity {
                 getString(R.string.squi),
 
         };
-        ListOfOperations adapter = new ListOfOperations(this,triangleOperations,imageId);
-        list =(ListView)findViewById(R.id.triangle_list);
+        ListOfOperations adapter = new ListOfOperations(this, triangleOperations, imageId);
+        list = (ListView) findViewById(R.id.triangle_list);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(TriangleOperationsActivity.this, "You Clicked at " + triangleOperations[+position], Toast.LENGTH_SHORT).show();
+                if (position == 0) {
+                    Intent intent = new Intent(getApplicationContext(),BaseAndHeight.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(TriangleOperationsActivity.this, "You Clicked at " + triangleOperations[+position], Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
