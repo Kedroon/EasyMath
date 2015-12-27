@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sample.kedroon.easymath.BaseAndHeight">
+    tools:context="com.sample.kedroon.easymath.ThreeSides">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,13 +22,13 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/base"
+                android:id="@+id/side1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:hint="@string/base"
+                android:hint="@string/side01"
                 android:inputType="numberDecimal" />
 
             <View
@@ -37,16 +37,32 @@
                 android:background="@android:color/darker_gray" />
 
             <EditText
-                android:id="@+id/height"
+                android:id="@+id/side2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:hint="@string/side02"
+                android:inputType="numberDecimal" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="48dp"
+                android:background="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/side3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:hint="@string/height"
+                android:hint="@string/side03"
                 android:inputType="numberDecimal" />
 
         </LinearLayout>
+
 
         <View
             android:layout_width="match_parent"
@@ -67,17 +83,28 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="82dp"
+            android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:contentDescription="@string/formula"
-            android:src="@drawable/baseandheight" />
+            android:src="@drawable/p3sides" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/formula"
+            android:src="@drawable/a3sides" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="16dp"
             android:background="@android:color/darker_gray" />
+
+
 
         <Button
             android:id="@+id/button01"
@@ -104,3 +131,7 @@
 
     </LinearLayout>
 </ScrollView>
+
+
+
+

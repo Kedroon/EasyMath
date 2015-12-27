@@ -18,8 +18,8 @@
         <activity
             android:name=".GeometricForms"
             android:label="@string/title_activity_geometric_forms"
-            android:theme="@style/AppTheme"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sample.kedroon.easymath.MainActivity" />
@@ -27,8 +27,8 @@
         <activity
             android:name=".TriangleOperationsActivity"
             android:label="@string/title_activity_triangle_operations"
-            android:theme="@style/AppTheme"
-            android:parentActivityName=".GeometricForms" >
+            android:parentActivityName=".GeometricForms"
+            android:theme="@style/AppTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sample.kedroon.easymath.GeometricForms" />
@@ -36,7 +36,15 @@
         <activity
             android:name=".BaseAndHeight"
             android:label="@string/title_activity_base_and_height"
-            android:theme="@style/AppTheme"
+            android:parentActivityName=".TriangleOperationsActivity"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sample.kedroon.easymath.TriangleOperationsActivity" />
+        </activity>
+        <activity
+            android:name=".ThreeSides"
+            android:label="@string/title_activity_three_sides"
             android:parentActivityName=".TriangleOperationsActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -15,5 +15,14 @@
     <string name="height">Altura</string>
     <string name="formula">Fórmula</string>
     <string name="calculate">Calcular</string>
-    <string name="result">Resultado= "</string>
+    <string name="result">Resultado = "</string>
+    <string name="icon">icon</string>
+    <string name="error_height">Por favor digite o valor da altura</string>
+    <string name="error_base">Por favor digite o valor da base</string>
+    <string name="error_heightbase">Por favor digite os valores da base e da altura</string>
+    <string name="title_activity_three_sides">Três Lados</string>
+    <string name="side01">Lado 1</string>
+    <string name="side02">Lado 2</string>
+    <string name="side03">Lado 3</string>
+    <string name="missing">faltando</string>
 </resources>

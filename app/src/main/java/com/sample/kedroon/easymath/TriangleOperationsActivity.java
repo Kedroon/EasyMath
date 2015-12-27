@@ -42,7 +42,12 @@ public class TriangleOperationsActivity extends AppCompatActivity {
                 if (position == 0) {
                     Intent intent = new Intent(getApplicationContext(),BaseAndHeight.class);
                     startActivity(intent);
-                } else {
+                }
+                else if(position == 1){
+                    Intent intent = new Intent(getApplicationContext(),ThreeSides.class);
+                    startActivity(intent);
+                }
+                else {
                     Toast.makeText(TriangleOperationsActivity.this, "You Clicked at " + triangleOperations[+position], Toast.LENGTH_SHORT).show();
                 }
             }
