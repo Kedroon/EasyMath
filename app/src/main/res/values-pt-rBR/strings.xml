@@ -25,4 +25,6 @@
     <string name="side02">Lado 2</string>
     <string name="side03">Lado 3</string>
     <string name="missing">faltando</string>
+    <string name="title_activity_two_sides_and_angle">Dois Lados e Ângulo</string>
+    <string name="angleactivity">Ângulo</string>
 </resources>

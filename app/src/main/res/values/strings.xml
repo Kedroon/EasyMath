@@ -25,4 +25,7 @@
     <string name="side02">Side 2</string>
     <string name="side03">Side 3</string>
     <string name="missing">missing</string>
+    <string name="title_activity_two_sides_and_angle">Two Sides and Angle</string>
+    <string name="angleactivity">Angle</string>
+    <string name="title_activity_equilateral_triangle">Equilateral Triangle</string>
 </resources>

@@ -47,6 +47,10 @@ public class TriangleOperationsActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(),ThreeSides.class);
                     startActivity(intent);
                 }
+                else if(position == 2){
+                    Intent intent = new Intent(getApplicationContext(),TwoSidesAndAngle.class);
+                    startActivity(intent);
+                }
                 else {
                     Toast.makeText(TriangleOperationsActivity.this, "You Clicked at " + triangleOperations[+position], Toast.LENGTH_SHORT).show();
                 }
