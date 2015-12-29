@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +19,7 @@
         <activity
             android:name=".GeometricForms"
             android:label="@string/title_activity_geometric_forms"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sample.kedroon.easymath.MainActivity" />
@@ -27,8 +27,7 @@
         <activity
             android:name=".TriangleOperationsActivity"
             android:label="@string/title_activity_triangle_operations"
-            android:parentActivityName=".GeometricForms"
-            android:theme="@style/AppTheme">
+            android:parentActivityName=".GeometricForms">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sample.kedroon.easymath.GeometricForms" />
@@ -37,7 +36,6 @@
             android:name=".BaseAndHeight"
             android:label="@string/title_activity_base_and_height"
             android:parentActivityName=".TriangleOperationsActivity"
-            android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -64,7 +62,8 @@
         <activity
             android:name=".EquilateralTriangle"
             android:label="@string/title_activity_equilateral_triangle"
-            android:parentActivityName=".TriangleOperationsActivity">
+            android:parentActivityName=".TriangleOperationsActivity"
+            android:windowSoftInputMode="stateHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sample.kedroon.easymath.TriangleOperationsActivity" />

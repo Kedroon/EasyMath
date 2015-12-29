@@ -1,11 +1,16 @@
 package com.sample.kedroon.easymath;
 
+
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,11 +45,33 @@ public class BaseAndHeight extends AppCompatActivity {
                 result = (base * height) / 2;
                 TextView textView = (TextView) findViewById(R.id.result_01);
                 String resultString = Float.toString(result);
-                textView.setText(getText(R.string.result) + resultString);
+                textView.setText(getText(R.string.area_result) + resultString);
             }
 
         });
 
+    }
+
+    @Override
+     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.legend) {
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

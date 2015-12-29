@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_custom"
     tools:context="com.sample.kedroon.easymath.EquilateralTriangle">
 
     <LinearLayout
@@ -28,38 +29,9 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:hint="@string/side01"
+                android:hint="@string/side_of_equi"
                 android:inputType="numberDecimal" />
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="48dp"
-                android:background="@android:color/darker_gray" />
-
-            <EditText
-                android:id="@+id/side2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_weight="1"
-                android:hint="@string/side02"
-                android:inputType="numberDecimal" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="48dp"
-                android:background="@android:color/darker_gray" />
-
-            <EditText
-                android:id="@+id/side3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                android:hint="@string/side03"
-                android:inputType="numberDecimal" />
 
         </LinearLayout>
 
@@ -87,16 +59,15 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:contentDescription="@string/formula"
-            android:src="@drawable/p3sides" />
+            android:src="@drawable/height_equi" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="48dp"
-
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:contentDescription="@string/formula"
-            android:src="@drawable/a3sides" />
+            android:src="@drawable/area_equilatero" />
 
         <View
             android:layout_width="match_parent"
@@ -121,17 +92,30 @@
             android:id="@+id/result_01"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:text="@string/result"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="22dp"
-            android:paddingStart="16dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:text="@string/height_result"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/result_02"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginBottom="22dp"
+            android:layout_marginTop="4dp"
             android:background="@color/colorPrimary"
-            />
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingStart="16dp"
+            android:text="@string/area_result"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
 
     </LinearLayout>
 </ScrollView>

@@ -28,4 +28,8 @@
     <string name="title_activity_two_sides_and_angle">Two Sides and Angle</string>
     <string name="angleactivity">Angle</string>
     <string name="title_activity_equilateral_triangle">Equilateral Triangle</string>
+    <string name="side_of_equi">Measure of the side</string>
+    <string name="area_result">Area = "</string>
+    <string name="height_result">Height = "</string>
+    <string name="legend">Legend</string>
 </resources>

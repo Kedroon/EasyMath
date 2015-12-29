@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_custom"
     tools:context="com.sample.kedroon.easymath.ThreeSides">
 
     <LinearLayout
@@ -121,17 +122,16 @@
             android:id="@+id/result_01"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:text="@string/result"
-            android:layout_marginTop="16dp"
             android:layout_marginBottom="22dp"
-            android:paddingStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:text="@string/area_result"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:background="@color/colorPrimary"
-            />
+            android:textSize="18sp" />
 
     </LinearLayout>
 </ScrollView>

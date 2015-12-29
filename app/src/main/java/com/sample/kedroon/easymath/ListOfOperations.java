@@ -17,8 +17,7 @@ public class ListOfOperations extends ArrayAdapter<String> {
     private final String[] web;
     private final Integer[] imageId;
 
-    public ListOfOperations(Activity context,
-                            String[] web, Integer[] imageId) {
+    public ListOfOperations(Activity context, String[] web, Integer[] imageId) {
         super(context, R.layout.operations, web);
         this.context = context;
         this.web = web;
@@ -30,10 +29,8 @@ public class ListOfOperations extends ArrayAdapter<String> {
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView= inflater.inflate(R.layout.operations, null, true);
         TextView txtTitle = (TextView) rowView.findViewById(R.id.txt);
-
         ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
         txtTitle.setText(web[position]);
-
         imageView.setImageResource(imageId[position]);
         return rowView;
     }

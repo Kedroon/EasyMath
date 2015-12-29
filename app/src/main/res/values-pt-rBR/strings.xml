@@ -27,4 +27,9 @@
     <string name="missing">faltando</string>
     <string name="title_activity_two_sides_and_angle">Dois Lados e Ângulo</string>
     <string name="angleactivity">Ângulo</string>
+    <string name="title_activity_equilateral_triangle">Triângulo Equilátero</string>
+    <string name="side_of_equi">Medida do lado</string>
+    <string name="area_result">Área = "</string>
+    <string name="height_result">Altura = "</string>
+    <string name="legend">Legend</string>
 </resources>

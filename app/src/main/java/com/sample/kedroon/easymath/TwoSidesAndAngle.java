@@ -1,5 +1,6 @@
 package com.sample.kedroon.easymath;
 
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -56,7 +57,7 @@ public class TwoSidesAndAngle extends AppCompatActivity {
                 float i = (float) result;
                 TextView textView = (TextView) findViewById(R.id.result_01);
                 String resultString = Float.toString(i);
-                textView.setText(getText(R.string.result) + resultString);
+                textView.setText(getText(R.string.area_result) + resultString);
             }
 
         });
