@@ -1,6 +1,6 @@
 package com.sample.kedroon.easymath;
 
-import android.app.Activity;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Integer[] imageId = {
-            R.drawable.skull,
+            R.drawable.geometricforms,
             R.drawable.skull,
             R.drawable.skull,
             R.drawable.skull,

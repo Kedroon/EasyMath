@@ -4,6 +4,8 @@
     <string name="title_activity_geometric_forms">Formas Geométricas</string>
     <string name="square">Quadrado</string>
     <string name="triangle">Triângulo</string>
+    <string name="diamond">Losango</string>
+    <string name="rectangle">Retângulo</string>
     <string name="title_activity_triangle_operations">Triângulo</string>
     <string name="herons_formula">Calcular área com as medidas dos 3 lados</string>
     <string name="base_height">Calcular área com a base e altura</string>
@@ -31,5 +33,28 @@
     <string name="side_of_equi">Medida do lado</string>
     <string name="area_result">Área = "</string>
     <string name="height_result">Altura = "</string>
-    <string name="legend">Legend</string>
+    <string name="close">Fechar</string>
+    <string name="title_activity_square">Quadrado</string>
+    <string name="title_activity_diamond">Losango</string>
+    <string name="diagonal_1">Diagonal 1</string>
+    <string name="diagonal_2">Diagonal 2</string>
+    <string name="title_activity_rectangle">Retângulo</string>
+    <string name="length">Comprimento</string>
+    <string name="width">Largura</string>
+
+
+    <string name="legend">Legenda</string>
+    <string name="area_legend">A = Área</string>
+    <string name="height_legend">h = Altura</string>
+    <string name="base_legend">b = Base</string>
+    <string name="side_legend">l = Lado</string>
+    <string name="side1_legend">a = Lado 1</string>
+    <string name="side2_legend">b = Lado 2</string>
+    <string name="side3_legend">c = Lado 3</string>
+    <string name="semi_perimeter_legend">p = Semi-Perímetro</string>
+    <string name="alpha_legend">α = Ângulo</string>
+    <string name="diagonal1_legend">d = Diagonal 1</string>
+    <string name="diagonal2_legend">D = Diagonal 2</string>
+    <string name="length_legend">a = Comprimento</string>
+    <string name="width_legend">b = Largura</string>
 </resources>

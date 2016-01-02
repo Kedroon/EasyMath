@@ -1,24 +1,32 @@
 package com.sample.kedroon.easymath;
 
-import android.app.Activity;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class ThreeSides extends AppCompatActivity {
 
     private double result;
+    PopUpCustom popupWindow;
+    ArrayList<String> legends;
+    boolean openedPopup=false;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_sides);
+        initPopUpCustom();
         Button button = (Button) findViewById(R.id.button01);
         final EditText eSide1 = (EditText) findViewById(R.id.side1);
         final EditText eSide2 = (EditText) findViewById(R.id.side2);
@@ -62,6 +70,57 @@ public class ThreeSides extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+
+        int id = item.getItemId();
+
+
+        if (id == R.id.legend) {
+            if(!openedPopup) {
+                popupWindow.openPopUp(findViewById(R.id.three_sides));
+                popupWindow.popupMessage.dismiss();
+                openedPopup=true;
+            }
+            popupWindow.openPopUp(findViewById(R.id.three_sides));
+
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    private void initStringLegends(){
+        legends.add(getText(R.string.semi_perimeter_legend).toString());
+        legends.add(getText(R.string.side1_legend).toString());
+        legends.add(getText(R.string.side2_legend).toString());
+        legends.add(getText(R.string.side3_legend).toString());
+        legends.add(getText(R.string.area_legend).toString());
+
+
+    }
+
+    private void initPopUpCustom(){
+        legends = new ArrayList<>();
+        initStringLegends();
+        popupWindow = new PopUpCustom(this,legends);
+        popupWindow.init();
+        popupWindow.popupInit();
+
+    }
+
+
 
 }
 

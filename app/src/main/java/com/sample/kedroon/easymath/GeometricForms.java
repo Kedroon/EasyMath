@@ -2,7 +2,6 @@ package com.sample.kedroon.easymath;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,8 +14,10 @@ public class GeometricForms extends AppCompatActivity {
 
 
     Integer[] imageId = {
-            R.drawable.skull,
-            R.drawable.skull,
+            R.drawable.trianglemenu,
+            R.drawable.quadradomenu,
+            R.drawable.rectanglemenu,
+            R.drawable.losango,
 
     };
 
@@ -27,6 +28,8 @@ public class GeometricForms extends AppCompatActivity {
         final String[] geometricOperations = {
                 getString(R.string.triangle),
                 getString(R.string.square),
+                getString(R.string.rectangle),
+                getString(R.string.diamond),
 
         };
         ListOfOperations adapter = new ListOfOperations(this,geometricOperations,imageId);
@@ -39,6 +42,20 @@ public class GeometricForms extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(),TriangleOperationsActivity.class);
                     startActivity(intent);
 
+                }
+                else if(position==1){
+                    Intent intent = new Intent(getApplicationContext(),SquareActivity.class);
+                    startActivity(intent);
+                }
+
+                else if(position==2){
+                    Intent intent = new Intent(getApplicationContext(),RectangleActivity.class);
+                    startActivity(intent);
+                }
+
+                else if(position==3){
+                    Intent intent = new Intent(getApplicationContext(),DiamondActivity.class);
+                    startActivity(intent);
                 }
                 else {
                 Toast.makeText(GeometricForms.this, "You Clicked at " + geometricOperations[+position], Toast.LENGTH_SHORT).show();

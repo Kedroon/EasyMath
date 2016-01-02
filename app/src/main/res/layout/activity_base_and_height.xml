@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_custom"
-    tools:context="com.sample.kedroon.easymath.BaseAndHeight">
+    tools:context="com.sample.kedroon.easymath.BaseAndHeight"
+    android:id="@+id/base_and_height">
+
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -4,12 +4,17 @@
     <style name="AppTheme" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">#1B5E20</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorPrimary</item>
-
         <item name="android:colorBackground">@color/background_custom</item>
 
 
+
+    </style>
+
+    <style name="CustomAnimation" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@animator/popup_appear</item>
+        <item name="android:windowExitAnimation">@animator/popup_disappear</item>
     </style>
 
 </resources>

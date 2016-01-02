@@ -11,12 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
-public class TwoSidesAndAngle extends AppCompatActivity {
+public class DiamondActivity extends AppCompatActivity {
 
-    private double result;
+
+    private float area;
     PopUpCustom popupWindow;
     ArrayList<String> legends;
     boolean openedPopup=false;
@@ -25,12 +25,11 @@ public class TwoSidesAndAngle extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_two_sides_and_angle);
+        setContentView(R.layout.activity_diamond);
         initPopUpCustom();
         Button button = (Button) findViewById(R.id.button01);
-        final EditText eSide1 = (EditText) findViewById(R.id.side1);
-        final EditText eSide2 = (EditText) findViewById(R.id.side2);
-        final EditText eAngle = (EditText) findViewById(R.id.angle);
+        final EditText eDiagonal1 = (EditText) findViewById(R.id.diagonal_minor);
+        final EditText eDiagonal2 = (EditText) findViewById(R.id.diagonal_major);
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -38,18 +37,13 @@ public class TwoSidesAndAngle extends AppCompatActivity {
             public void onClick(View v) {
                 String error = "";
                 boolean isError = false;
-                if (TextUtils.isEmpty(eSide1.getText())) {
-                    error += getText(R.string.side01) + ", ";
+                if (TextUtils.isEmpty(eDiagonal1.getText())) {
+                    error += getText(R.string.diagonal_1) + ", ";
                     isError = true;
 
                 }
-                if (TextUtils.isEmpty(eSide2.getText())) {
-                    error += getText(R.string.side02) + ", ";
-                    isError = true;
-
-                }
-                if (TextUtils.isEmpty(eAngle.getText())) {
-                    error += getText(R.string.angleactivity) + ", ";
+                if (TextUtils.isEmpty(eDiagonal2.getText())) {
+                    error += getText(R.string.diagonal_2) + ", ";
                     isError = true;
 
                 }
@@ -58,22 +52,22 @@ public class TwoSidesAndAngle extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
                     return;
                 }
-                float side01 = Float.valueOf(eSide1.getText().toString());
-                float side02 = Float.valueOf(eSide2.getText().toString());
-                float angle = Float.valueOf(eAngle.getText().toString());
-                result = (side01*side02*Math.sin(Math.toRadians(angle)))/2;
-                float i = (float) result;
+                float diagonal01 = Float.valueOf(eDiagonal1.getText().toString());
+                float diagonal02 = Float.valueOf(eDiagonal2.getText().toString());
+
+                area = (diagonal01*diagonal02)/2;
                 TextView textView = (TextView) findViewById(R.id.result_01);
-                String resultString = Float.toString(i);
-                textView.setText(getText(R.string.area_result) + resultString);
+                String areaString = Float.toString(area);
+                textView.setText(getText(R.string.area_result) + areaString);
             }
 
         });
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
+        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -84,16 +78,15 @@ public class TwoSidesAndAngle extends AppCompatActivity {
 
         int id = item.getItemId();
 
-
+        //noinspection SimplifiableIfStatement
         if (id == R.id.legend) {
             if(!openedPopup) {
-                popupWindow.openPopUp(findViewById(R.id.two_sides_and_angle));
+                popupWindow.openPopUp(findViewById(R.id.diamond));
                 popupWindow.popupMessage.dismiss();
                 openedPopup=true;
             }
-            popupWindow.openPopUp(findViewById(R.id.two_sides_and_angle));
 
-
+            popupWindow.openPopUp(findViewById(R.id.diamond));
         }
 
 
@@ -103,10 +96,10 @@ public class TwoSidesAndAngle extends AppCompatActivity {
 
     private void initStringLegends(){
 
+        legends.add(getText(R.string.diagonal1_legend).toString());
+        legends.add(getText(R.string.diagonal2_legend).toString());
         legends.add(getText(R.string.area_legend).toString());
-        legends.add(getText(R.string.side1_legend).toString());
-        legends.add(getText(R.string.side2_legend).toString());
-        legends.add(getText(R.string.alpha_legend).toString());
+
 
     }
 
@@ -118,7 +111,6 @@ public class TwoSidesAndAngle extends AppCompatActivity {
         popupWindow.popupInit();
 
     }
-
 
 }
 

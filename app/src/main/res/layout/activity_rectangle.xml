@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_custom"
-    tools:context="com.sample.kedroon.easymath.TwoSidesAndAngle"
-    android:id="@+id/two_sides_and_angle">
+    tools:context="com.sample.kedroon.easymath.RectangleActivity"
+    android:id="@+id/rectangle">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,13 +25,13 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/side1"
+                android:id="@+id/length"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:hint="@string/side01"
+                android:hint="@string/length"
                 android:inputType="numberDecimal" />
 
             <View
@@ -39,32 +40,16 @@
                 android:background="@android:color/darker_gray" />
 
             <EditText
-                android:id="@+id/side2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_weight="1"
-                android:hint="@string/side02"
-                android:inputType="numberDecimal" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="48dp"
-                android:background="@android:color/darker_gray" />
-
-            <EditText
-                android:id="@+id/angle"
+                android:id="@+id/width"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:hint="@string/angleactivity"
+                android:hint="@string/width"
                 android:inputType="numberDecimal" />
 
         </LinearLayout>
-
 
         <View
             android:layout_width="match_parent"
@@ -85,18 +70,17 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="82dp"
+            android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:contentDescription="@string/formula"
-            android:src="@drawable/tsidesoangle" />
+            android:src="@drawable/rectangleformula" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="16dp"
             android:background="@android:color/darker_gray" />
-
 
         <Button
             android:id="@+id/button01"
@@ -114,7 +98,7 @@
             android:id="@+id/result_01"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:layout_marginBottom="22dp"
+            android:layout_marginBottom="24dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
             android:gravity="center_vertical"
@@ -127,7 +111,3 @@
 
     </LinearLayout>
 </ScrollView>
-
-
-
-

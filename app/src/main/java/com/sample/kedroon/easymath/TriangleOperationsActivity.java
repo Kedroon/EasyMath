@@ -15,10 +15,10 @@ public class TriangleOperationsActivity extends AppCompatActivity {
 
 
     Integer[] imageId = {
-            R.drawable.skull,
-            R.drawable.skull,
-            R.drawable.skull,
-            R.drawable.skull,
+            R.drawable.trianglemenu,
+            R.drawable.trianglemenu,
+            R.drawable.trianglemenu,
+            R.drawable.trianglemenu,
 
     };
 
