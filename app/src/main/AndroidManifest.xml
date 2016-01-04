@@ -94,6 +94,23 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sample.kedroon.easymath.GeometricForms" />
         </activity>
+        <activity
+            android:name=".CircleOperationsActivity"
+            android:label="@string/title_activity_circle_operations"
+            android:parentActivityName=".GeometricForms">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sample.kedroon.easymath.GeometricForms" />
+        </activity>
+        <activity
+            android:name=".CircleDiameterArea"
+            android:label="@string/title_activity_circle_diameter_area"
+            android:parentActivityName=".CircleOperationsActivity"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sample.kedroon.easymath.CircleOperationsActivity" />
+        </activity>
     </application>
 
 </manifest>

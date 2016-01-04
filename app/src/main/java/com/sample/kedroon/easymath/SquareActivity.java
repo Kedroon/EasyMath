@@ -11,7 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class SquareActivity extends AppCompatActivity{
@@ -35,27 +42,52 @@ public class SquareActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 
-                String error="";
+                String error = "";
                 boolean isError = false;
                 if (TextUtils.isEmpty(eSide.getText())) {
                     error += getText(R.string.side_of_equi) + ", ";
                     isError = true;
                 }
 
-                if(isError){
-                    error+=getText(R.string.missing);
-                    Toast.makeText(getApplicationContext(),error,Toast.LENGTH_LONG).show();
+                if (isError) {
+                    error += getText(R.string.missing);
+                    Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
                     return;
                 }
                 float side = Float.valueOf(eSide.getText().toString());
 
-                result = (float) Math.pow(side,2);
+                result = (float) Math.pow(side, 2);
                 TextView textView = (TextView) findViewById(R.id.result_01);
                 String resultString = Float.toString(result);
                 textView.setText(getText(R.string.area_result) + resultString);
             }
 
         });
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("0390E689DC828F36AC92A8F50F8934F9").build();
+        mAdView.loadAd(adRequest);
+
+        AdListener googleAdListener = new AdListener()
+        {
+
+            @Override
+            public void onAdLoaded()
+            {
+                super.onAdLoaded();
+                try
+                {
+                    findViewById(R.id.adView).setVisibility(View.VISIBLE);
+                }
+                catch (Exception e)
+                {
+                    Logger logger = Logger.getAnonymousLogger();
+                    logger.log(Level.SEVERE, "an exception was thrown", e);
+                }
+            }
+        };
+
+        mAdView.setAdListener(googleAdListener);
+
 
     }
 

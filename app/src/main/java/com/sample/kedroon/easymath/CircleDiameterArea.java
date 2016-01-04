@@ -20,38 +20,33 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+public class CircleDiameterArea extends AppCompatActivity {
 
-public class RectangleActivity extends AppCompatActivity{
-
-    private float result;
+    private double diameter;
+    private double area;
     PopUpCustom popupWindow;
     ArrayList<String> legends;
     boolean openedPopup=false;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rectangle);
+        setContentView(R.layout.activity_circle_diameter_area);
         initPopUpCustom();
         Button button = (Button) findViewById(R.id.button01);
-        final EditText eLength = (EditText) findViewById(R.id.length);
-        final EditText eWidth = (EditText) findViewById(R.id.width);
+        final EditText eRadius = (EditText) findViewById(R.id.radius);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String error = "";
                 boolean isError = false;
-                if (TextUtils.isEmpty(eLength.getText())) {
-                    error += getText(R.string.length) + ", ";
+                if (TextUtils.isEmpty(eRadius.getText())) {
+                    error += getText(R.string.radius) + ", ";
                     isError = true;
-                }
-                if (TextUtils.isEmpty(eWidth.getText())) {
-                    error += getText(R.string.width) + ", ";
-                    isError = true;
+
                 }
 
                 if (isError) {
@@ -59,12 +54,17 @@ public class RectangleActivity extends AppCompatActivity{
                     Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
                     return;
                 }
-                float length = Float.valueOf(eLength.getText().toString());
-                float width = Float.valueOf(eWidth.getText().toString());
-                result = length * width;
+                float radius = Float.valueOf(eRadius.getText().toString());
+                diameter = 2*Math.PI*radius;
+                area = Math.PI * Math.pow(radius,2);
+                float i = (float) diameter;
+                float j = (float) area;
                 TextView textView = (TextView) findViewById(R.id.result_01);
-                String resultString = Float.toString(result);
-                textView.setText(getText(R.string.area_result) + resultString);
+                TextView textView1 = (TextView) findViewById(R.id.result_02);
+                String diameterString = Float.toString(i);
+                String areaString = Float.toString(j);
+                textView.setText(getText(R.string.diameter_result) + diameterString);
+                textView1.setText(getText(R.string.area_result) + areaString);
             }
 
         });
@@ -97,7 +97,7 @@ public class RectangleActivity extends AppCompatActivity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
+        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -108,16 +108,15 @@ public class RectangleActivity extends AppCompatActivity{
 
         int id = item.getItemId();
 
-
+        //noinspection SimplifiableIfStatement
         if (id == R.id.legend) {
             if(!openedPopup) {
-                popupWindow.openPopUp(findViewById(R.id.rectangle));
+                popupWindow.openPopUp(findViewById(R.id.diameter_area_circle));
                 popupWindow.popupMessage.dismiss();
                 openedPopup=true;
             }
-            popupWindow.openPopUp(findViewById(R.id.rectangle));
 
-
+            popupWindow.openPopUp(findViewById(R.id.diameter_area_circle));
         }
 
 
@@ -127,10 +126,10 @@ public class RectangleActivity extends AppCompatActivity{
 
     private void initStringLegends(){
 
+        legends.add(getText(R.string.diameter_legend).toString());
+        legends.add(getText(R.string.radius_legend).toString());
+        legends.add(getText(R.string.pi_legend).toString());
         legends.add(getText(R.string.area_legend).toString());
-        legends.add(getText(R.string.length_legend).toString());
-        legends.add(getText(R.string.width_legend).toString());
-
 
 
     }
@@ -143,11 +142,6 @@ public class RectangleActivity extends AppCompatActivity{
         popupWindow.popupInit();
 
     }
-
-
-
-
-
 
 }
 

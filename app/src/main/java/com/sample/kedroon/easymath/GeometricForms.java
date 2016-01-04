@@ -17,6 +17,7 @@ public class GeometricForms extends AppCompatActivity {
             R.drawable.trianglemenu,
             R.drawable.quadradomenu,
             R.drawable.rectanglemenu,
+            R.drawable.circulomenu,
             R.drawable.losango,
 
     };
@@ -29,6 +30,7 @@ public class GeometricForms extends AppCompatActivity {
                 getString(R.string.triangle),
                 getString(R.string.square),
                 getString(R.string.rectangle),
+                getString(R.string.circle),
                 getString(R.string.diamond),
 
         };
@@ -52,8 +54,12 @@ public class GeometricForms extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(),RectangleActivity.class);
                     startActivity(intent);
                 }
-
                 else if(position==3){
+                    Intent intent = new Intent(getApplicationContext(),CircleOperationsActivity.class);
+                    startActivity(intent);
+                }
+
+                else if(position==4){
                     Intent intent = new Intent(getApplicationContext(),DiamondActivity.class);
                     startActivity(intent);
                 }

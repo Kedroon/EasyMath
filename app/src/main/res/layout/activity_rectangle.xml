@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/background_custom"
     tools:context="com.sample.kedroon.easymath.RectangleActivity"
     android:id="@+id/rectangle">
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        android:visibility="gone"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
+
+
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
     <LinearLayout
@@ -111,3 +129,4 @@
 
     </LinearLayout>
 </ScrollView>
+</LinearLayout>

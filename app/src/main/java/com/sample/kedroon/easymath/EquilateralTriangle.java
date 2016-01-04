@@ -12,7 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class EquilateralTriangle extends AppCompatActivity {
 
@@ -49,8 +55,8 @@ public class EquilateralTriangle extends AppCompatActivity {
                     return;
                 }
                 float side01 = Float.valueOf(eSide1.getText().toString());
-                height = (side01*Math.sqrt(3))/2;
-                area = (Math.pow(side01,2)*Math.sqrt(3))/4;
+                height = (side01 * Math.sqrt(3)) / 2;
+                area = (Math.pow(side01, 2) * Math.sqrt(3)) / 4;
                 float i = (float) height;
                 float j = (float) area;
                 TextView textView = (TextView) findViewById(R.id.result_01);
@@ -62,6 +68,30 @@ public class EquilateralTriangle extends AppCompatActivity {
             }
 
         });
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("0390E689DC828F36AC92A8F50F8934F9").build();
+        mAdView.loadAd(adRequest);
+
+        AdListener googleAdListener = new AdListener()
+        {
+
+            @Override
+            public void onAdLoaded()
+            {
+                super.onAdLoaded();
+                try
+                {
+                    findViewById(R.id.adView).setVisibility(View.VISIBLE);
+                }
+                catch (Exception e)
+                {
+                    Logger logger = Logger.getAnonymousLogger();
+                    logger.log(Level.SEVERE, "an exception was thrown", e);
+                }
+            }
+        };
+
+        mAdView.setAdListener(googleAdListener);
 
     }
 

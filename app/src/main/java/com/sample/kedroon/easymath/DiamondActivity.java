@@ -11,7 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DiamondActivity extends AppCompatActivity {
 
@@ -55,13 +62,37 @@ public class DiamondActivity extends AppCompatActivity {
                 float diagonal01 = Float.valueOf(eDiagonal1.getText().toString());
                 float diagonal02 = Float.valueOf(eDiagonal2.getText().toString());
 
-                area = (diagonal01*diagonal02)/2;
+                area = (diagonal01 * diagonal02) / 2;
                 TextView textView = (TextView) findViewById(R.id.result_01);
                 String areaString = Float.toString(area);
                 textView.setText(getText(R.string.area_result) + areaString);
             }
 
         });
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("0390E689DC828F36AC92A8F50F8934F9").build();
+        mAdView.loadAd(adRequest);
+
+        AdListener googleAdListener = new AdListener()
+        {
+
+            @Override
+            public void onAdLoaded()
+            {
+                super.onAdLoaded();
+                try
+                {
+                    findViewById(R.id.adView).setVisibility(View.VISIBLE);
+                }
+                catch (Exception e)
+                {
+                    Logger logger = Logger.getAnonymousLogger();
+                    logger.log(Level.SEVERE, "an exception was thrown", e);
+                }
+            }
+        };
+
+        mAdView.setAdListener(googleAdListener);
 
     }
 

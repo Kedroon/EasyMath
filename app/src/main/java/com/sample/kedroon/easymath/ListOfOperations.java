@@ -8,10 +8,54 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by migue on 12/25/2015.
- */
+
 public class ListOfOperations extends ArrayAdapter<String> {
+    static class ViewHolderItem {
+        TextView textViewItem;
+        ImageView imageViewItem;
+
+    }
+
+    private final Activity context;
+    private final String[] text;
+    private final Integer[] imageId;
+
+    public ListOfOperations(Activity context, String[] text, Integer[] imageId) {
+        super(context, R.layout.operations, text);
+        this.context = context;
+        this.text = text;
+        this.imageId = imageId;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolderItem viewHolderItem;
+        if (convertView == null) {
+            // inflate the layout
+            LayoutInflater inflater = context.getLayoutInflater();
+            convertView = inflater.inflate(R.layout.operations, parent, false);
+            // well set up the ViewHolder
+            viewHolderItem = new ViewHolderItem();
+            viewHolderItem.textViewItem = (TextView) convertView.findViewById(R.id.txt);
+            viewHolderItem.imageViewItem = (ImageView) convertView.findViewById(R.id.img);
+            // store the holder with the view.
+
+            convertView.setTag(viewHolderItem);
+        } else {
+            viewHolderItem = (ViewHolderItem) convertView.getTag();
+        }
+
+        if (text[position] != null && imageId[position] != null) {
+            viewHolderItem.textViewItem.setText(text[position]);
+            viewHolderItem.imageViewItem.setImageResource(imageId[position]);
+        }
+
+        return convertView;
+
+    }
+}
+
+/*public class ListOfOperations extends ArrayAdapter<String> {
 
     private final Activity context;
     private final String[] web;
@@ -34,5 +78,6 @@ public class ListOfOperations extends ArrayAdapter<String> {
         imageView.setImageResource(imageId[position]);
         return rowView;
     }
-}
+} */
+
 

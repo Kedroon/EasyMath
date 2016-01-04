@@ -6,6 +6,7 @@
     <string name="triangle">Triângulo</string>
     <string name="diamond">Losango</string>
     <string name="rectangle">Retângulo</string>
+    <string name="circle">Círculo</string>
     <string name="title_activity_triangle_operations">Triângulo</string>
     <string name="herons_formula">Calcular área com as medidas dos 3 lados</string>
     <string name="base_height">Calcular área com a base e altura</string>
@@ -41,6 +42,12 @@
     <string name="title_activity_rectangle">Retângulo</string>
     <string name="length">Comprimento</string>
     <string name="width">Largura</string>
+    <string name="diameter_area_circle">Calcular o diâmetro e área</string>
+    <string name="sector_circle">Calcular um setor circular</string>
+    <string name="title_activity_circle_operations">Círculo</string>
+    <string name="diameter_result">Diâmetro = "</string>
+    <string name="radius">Raio do círculo</string>
+    <string name="title_activity_circle_diameter_area">Diâmetro e Área</string>
 
 
     <string name="legend">Legenda</string>
@@ -57,4 +64,8 @@
     <string name="diagonal2_legend">D = Diagonal 2</string>
     <string name="length_legend">a = Comprimento</string>
     <string name="width_legend">b = Largura</string>
+    <string name="diameter_legend">D = Diâmetro</string>
+    <string name="radius_legend">r = Raio</string>
+    <string name="pi_legend">π = PI</string>
+
 </resources>
